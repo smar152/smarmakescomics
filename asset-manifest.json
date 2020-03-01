@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/smarmakescomics/static/css/main.30c8e19e.chunk.css",
+    "main.css": "/smarmakescomics/static/css/main.84869a98.chunk.css",
     "main.js": "/smarmakescomics/static/js/main.872f804f.chunk.js",
     "main.js.map": "/smarmakescomics/static/js/main.872f804f.chunk.js.map",
     "runtime-main.js": "/smarmakescomics/static/js/runtime-main.1d3b76af.js",
@@ -8,15 +8,15 @@
     "static/js/2.4c6932b0.chunk.js": "/smarmakescomics/static/js/2.4c6932b0.chunk.js",
     "static/js/2.4c6932b0.chunk.js.map": "/smarmakescomics/static/js/2.4c6932b0.chunk.js.map",
     "index.html": "/smarmakescomics/index.html",
-    "precache-manifest.a8b7223a50e34d09c5adcaa0a0513451.js": "/smarmakescomics/precache-manifest.a8b7223a50e34d09c5adcaa0a0513451.js",
+    "precache-manifest.afc4fc8342d15ca351c45ad3b1742b3d.js": "/smarmakescomics/precache-manifest.afc4fc8342d15ca351c45ad3b1742b3d.js",
     "service-worker.js": "/smarmakescomics/service-worker.js",
-    "static/css/main.30c8e19e.chunk.css.map": "/smarmakescomics/static/css/main.30c8e19e.chunk.css.map",
+    "static/css/main.84869a98.chunk.css.map": "/smarmakescomics/static/css/main.84869a98.chunk.css.map",
     "static/js/2.4c6932b0.chunk.js.LICENSE.txt": "/smarmakescomics/static/js/2.4c6932b0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1d3b76af.js",
     "static/js/2.4c6932b0.chunk.js",
-    "static/css/main.30c8e19e.chunk.css",
+    "static/css/main.84869a98.chunk.css",
     "static/js/main.872f804f.chunk.js"
   ]
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c9becbc74c2749444d02e6e5b033632e",
+    "revision": "466384795493be8a04a8701f5a17f7db",
     "url": "/smarmakescomics/index.html"
   },
   {
-    "revision": "392e3e91e15a92d0ac17",
-    "url": "/smarmakescomics/static/css/main.30c8e19e.chunk.css"
+    "revision": "8f2910ca74f138d93326",
+    "url": "/smarmakescomics/static/css/main.84869a98.chunk.css"
   },
   {
     "revision": "98f68c924196d5454d2e",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/smarmakescomics/static/js/2.4c6932b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "392e3e91e15a92d0ac17",
+    "revision": "8f2910ca74f138d93326",
     "url": "/smarmakescomics/static/js/main.872f804f.chunk.js"
   },
   {
