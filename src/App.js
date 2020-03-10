@@ -1,20 +1,31 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Illustration from "./Components/Illustration";
+import IllustrationGallery from "./Components/IllustrationGallery.js";
 import Home from "./Components/Home";
+import Header from "./common/Header.js";
+import Footer from "./common/Footer.js";
+import { getIllustrations } from "./data/illustrationData";
+import IllustrationPage from "./Components/IllustrationPage.js";
+
+const illustrations = getIllustrations();
 
 function App() {
   return (
-    <Router basename="smarmakescomics">
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/illustration">
-          <Illustration />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Header />
+      <Router basename="smarmakescomics">
+        <Switch>
+          <Route exact component={Home} path="/" />
+          <Route exact component={IllustrationGallery} path="/illustration/" />
+          <Route
+            exact
+            component={IllustrationPage}
+            path="/illustration/:onoma"
+          />
+        </Switch>
+      </Router>
+      <Footer />
+    </>
   );
 }
 

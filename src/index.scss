@@ -5,19 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
 
-.header {
-  height: 50px;
-  background-color: #ffc852;
-}
+  .header {
+    height: 50px;
+    background-color: #ffc852;
+  }
 
-.footer {
-  height: 30px;
-  background-color: #ffc852;
+  .footer {
+    height: 30px;
+    background-color: #ffc852;
+  }
 }
