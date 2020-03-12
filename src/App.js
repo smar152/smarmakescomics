@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import IllustrationGallery from "./Components/IllustrationGallery.js";
 import Home from "./Components/Home";
+import Temporary from "./Components/Temporary";
 import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
 import { getIllustrations } from "./data/illustrationData";
@@ -15,7 +16,8 @@ function App() {
       <Header />
       <Router basename="smarmakescomics">
         <Switch>
-          <Route exact component={Home} path="/" />
+          <Route exact component={Temporary} path="/" />
+          <Route exact component={Home} path="/home/" />
           <Route exact component={IllustrationGallery} path="/illustration/" />
           <Route
             exact
