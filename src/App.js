@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <Router basename="smarmakescomics">
+      <Router>
         <Switch>
           <Route exact component={Temporary} path="/" />
           <Route exact component={Home} path="/home/" />

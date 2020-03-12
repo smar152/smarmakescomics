@@ -12,8 +12,11 @@ body {
   }
 
   .header {
-    height: 50px;
+    height: min-height;
     background-color: #ffc852;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .footer {
