@@ -9,27 +9,20 @@ const illustrations = getIllustrations();
 const IllustrationGallery = props => {
   return (
     <div id="illustration">
-      <p>Εικονογράφηση</p>
-      <table className="table">
-        <tbody>
-          {Object.keys(illustrations).map((key, index) => {
-            const illustration = illustrations[key];
-            return (
-              <tr key={index}>
-                <td>
-                  <img src={process.env.PUBLIC_URL + illustration.src} />
-                </td>
-                <td>
-                  <Link to={`/illustration/${key}`}>{illustration.title}</Link>
-                </td>
-                <td>{illustration.description}</td>
-                <td>{illustration.node}</td>
-              </tr>
-            );
-          })}
-          ;
-        </tbody>
-      </table>
+      <div className="container p-3">
+        <h1 id="pageTitle">Εικονογράφηση</h1>
+        {Object.keys(illustrations).map((key, index) => {
+          const illustration = illustrations[key];
+          return (
+            <Link to={`illustration/${key}`}>
+              <img
+                className="col-6 col-md-4 p-2"
+                src={process.env.PUBLIC_URL + illustration.thumbSrc}
+              />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -10,7 +10,7 @@ import IllustrationPage from "./Components/IllustrationPage.js";
 
 const illustrations = getIllustrations();
 
-function App() {
+const App = props => {
   return (
     <>
       <Header />
@@ -19,16 +19,18 @@ function App() {
           <Route exact component={Temporary} path="/" />
           <Route exact component={Home} path="/home/" />
           <Route exact component={IllustrationGallery} path="/illustration/" />
+          return (
           <Route
             exact
             component={IllustrationPage}
             path="/illustration/:onoma"
           />
+          );
         </Switch>
       </Router>
       <Footer />
     </>
   );
-}
+};
 
 export default App;

@@ -2,19 +2,40 @@ import React from "react";
 
 const illustrations = {
   mermay: {
-    src: "/img/IllustrationThumb0.jpg",
+    thumbSrc: "/img/IllustrationThumb0.jpg",
+    src: "/img/illustrations/Mermay10.jpg",
     title: "Mermaid has feelings",
-    description: "Made for the Mermay challenge"
+    subtitle: "Made for the Mermay challenge, 2018",
+    description: "Personal project"
   },
   poisonous: {
-    src: "/img/IllustrationThumb1.jpg",
+    thumbSrc: "/img/IllustrationThumb1.jpg",
+    src: "/img/illustrations/Mermay10.jpg",
     title: "Poisonous",
-    description: "Made for the Inktober challenge"
+    subtitle: "Made for the Inktober challenge, 2018",
+    description: "Personal project"
   },
   trees: {
-    src: "/img/IllustrationThumb2.jpg",
+    thumbSrc: "/img/IllustrationThumb2.jpg",
+    src: "/img/illustrations/Mermay10.jpg",
     title: "Trees",
-    description: "Made for the Trees exhibition"
+    subtitle: "Made for the Trees exhibition, 2018",
+    description: "Exhibition lorem ipsum dolor sit amet"
+  },
+  worldCup: {
+    thumbSrc: "/img/IllustrationThumb3.jpg",
+    src: "/img/illustrations/Mermay10.jpg",
+    title: "Poland - Colombia",
+    subtitle: "Illustration Practice based on a photograph, 2018",
+    description: "Personal project"
+  },
+  christmas: {
+    thumbSrc: "/img/IllustrationThumb4.jpg",
+    src: "/img/illustrations/Mermay10.jpg",
+    title: "Christmas Jazz",
+    subtitle: "Poster Design for a school concert",
+    description:
+      "Designed for the Christmas concert by the children's choir of an elementary school"
   }
 };
 
