@@ -1,8 +1,7 @@
 import React from "react";
 import * as serviceWorker from "../serviceWorker";
 import { getIllustrations } from "../data/illustrationData";
-import { Route, Link } from "react-router-dom";
-import IllustrationPage from "./IllustrationPage.js";
+import { Link } from "react-router-dom";
 
 const illustrations = getIllustrations();
 

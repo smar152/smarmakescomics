@@ -8,6 +8,9 @@ function Home(props) {
         <li>
           <Link to="/illustration">Illustration Gallery</Link>
         </li>
+        <li>
+          <Link to="/comics">Comics Gallery</Link>
+        </li>
       </ul>
     </div>
   );

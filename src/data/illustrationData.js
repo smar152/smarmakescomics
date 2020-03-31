@@ -5,7 +5,7 @@ const illustrations = {
     thumbSrc: "/img/IllustrationThumb0.jpg",
     src: "/img/illustrations/Mermay10.jpg",
     title: "Mermaid has feelings",
-    subtitle: "Made for the Mermay challenge, 2018",
+    subtitle: "Mermay challenge, 2018",
     description: "Personal project"
   },
   poisonous: {
