@@ -10,6 +10,7 @@ const ComicPage = props => {
   const comic = comics[key];
   return (
     <>
+      <Link to="/comics">Comics Gallery</Link>
       <p>Specific Comic</p>
     </>
   );
