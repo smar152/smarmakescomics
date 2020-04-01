@@ -13,7 +13,7 @@ const IllustrationGallery = props => {
         {Object.keys(illustrations).map((key, index) => {
           const illustration = illustrations[key];
           return (
-            <Link to={`illustration/${key}`}>
+            <Link to={`illustration/${key}`} key={key}>
               <img
                 className="col-6 col-md-4 p-2"
                 src={process.env.PUBLIC_URL + illustration.thumbSrc}

@@ -16,7 +16,7 @@ const ComicsGallery = props => {
             <Link to={`comics/${key}`}>
               <img
                 className="img-fluid"
-                src={process.env.PUBLIC_URL + comic.thumbSrc}
+                src={process.env.PUBLIC_URL + comic.coverSrc}
               />
             </Link>
           </div>

@@ -15,9 +15,9 @@ const illustrations = getIllustrations();
 const App = props => {
   return (
     <>
-      <Header />
-      <div className="content container mt-3 mb-3">
-        <Router>
+      <Router>
+        <Header />
+        <div className="content container mt-3 mb-3">
           <Switch>
             <Route exact component={Temporary} path="/" />
             <Route exact component={Home} path="/home/" />
@@ -34,9 +34,9 @@ const App = props => {
             <Route exact component={ComicsGallery} path="/comics/" />
             <Route exact component={ComicPage} path="/comics/:onoma" />
           </Switch>
-        </Router>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </Router>
     </>
   );
 };

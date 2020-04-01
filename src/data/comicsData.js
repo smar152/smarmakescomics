@@ -2,14 +2,18 @@ import React from "react";
 
 const comics = {
   myalo: {
-    thumbSrc: "/img/comicCovers/MyaloCover.jpg",
+    coverSrc: "/img/comicCovers/MyaloCover.jpg",
     src: "/img/illustrations/Mermay10.jpg",
     title: "Το Μυαλό μου και μία Λίρα",
-    subtitle: "44 σελίδες, 2019",
-    description: "Αυτοβιογραφικά κομιξάκια μπλα μπλα μπλα"
+    subtitle: "2019 | 44 σελίδες | zine | αυτοβιογραφικό",
+    description:
+      "Αυτό το κόμικ είναι έτσι κι αλλιώς, προέκυψε κάπως και μιλάει για τα τάδε θέματα. Μικρή περιγραφή ανάμεσα στο εξώφυλλο και τα δείγματα των σελίδων.  Curabitur nec leo imperdiet, consequat leo id, blandit justo. Aenean gravida ex non ligula semper vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam rhoncus dui eget lacus placerat porttitor. Morbi eget ullamcorper turpis. Sed maximus posuere ipsum, et bibendum ante finibus ac.",
+    page1src: "/img/comicPages/Myalo_1.jpg",
+    page2src: "/img/comicPages/Myalo_2.jpg",
+    page3src: "/img/comicPages/Myalo_3.jpg"
   },
   croissanakia: {
-    thumbSrc: "/img/comicCovers/CroissanakiaCover.jpg",
+    coverSrc: "/img/comicCovers/CroissanakiaCover.jpg",
     src: "/img/illustrations/Mermay10.jpg",
     title: "Τα Κρουασανάκια δεν είναι τα Ίδια",
     subtitle: "24 σελίδες, 2018",
