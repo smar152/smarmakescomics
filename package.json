@@ -18,7 +18,6 @@
     "build": "react-scripts build",
     "postbuild": "npm run copy404",
     "copy404": "cp build/index.html build/404.html",
-    "postcopy404": "echo smarmakescomics.com> build/CNAME ",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
