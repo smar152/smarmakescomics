@@ -5,23 +5,25 @@ import { Link } from "react-router-dom";
 
 const comics = getComics();
 
-const ComicsGallery = props => {
+const ComicsGallery = (props) => {
   return (
     <div className="container p-3">
       <h1 id="pageTitle">Κόμικς</h1>
-      {Object.keys(comics).map((key, index) => {
-        const comic = comics[key];
-        return (
-          <div className="col mh-25">
-            <Link to={`comics/${key}`}>
-              <img
-                className="img-fluid"
-                src={process.env.PUBLIC_URL + comic.coverSrc}
-              />
-            </Link>
-          </div>
-        );
-      })}
+      <div className="row">
+        {Object.keys(comics).map((key) => {
+          const comic = comics[key];
+          return (
+            <div className="col-12 col-md-4 p-1">
+              <Link to={`comics/${key}`}>
+                <img
+                  className="img-fluid comicCoverInGallery"
+                  src={process.env.PUBLIC_URL + comic.coverSrc}
+                />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
