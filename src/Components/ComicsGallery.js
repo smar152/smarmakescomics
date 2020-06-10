@@ -1,19 +1,20 @@
 import React from "react";
 import * as serviceWorker from "../serviceWorker";
-import { getComics } from "../data/comicsData";
-import { Link } from "react-router-dom";
+// import { getComics } from "../data/comicsData";
+// import { Link } from "react-router-dom";
+import CoversGallery from "./CoversGallery.js";
 
-const comics = getComics();
+// const comics = getComics();
 
 const ComicsGallery = (props) => {
   return (
     <div className="container p-3">
       <h1 id="pageTitle">Κόμικς</h1>
       <div className="row">
-        <div className="col">
+        <div className="col-12">
           <div className="comic-gallery-container">
-            {Object.keys(comics).map((key) => {
-              const comic = comics[key];
+            <CoversGallery></CoversGallery>
+            {/* //pre-masonry version 
               return (
                 <Link to={`comics/${key}`}>
                   <img
@@ -22,7 +23,7 @@ const ComicsGallery = (props) => {
                   />
                 </Link>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>
