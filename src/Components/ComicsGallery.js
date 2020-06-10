@@ -10,19 +10,21 @@ const ComicsGallery = (props) => {
     <div className="container p-3">
       <h1 id="pageTitle">Κόμικς</h1>
       <div className="row">
-        {Object.keys(comics).map((key) => {
-          const comic = comics[key];
-          return (
-            <div className="col-12 col-md-4 p-1">
-              <Link to={`comics/${key}`}>
-                <img
-                  className="img-fluid comicCoverInGallery"
-                  src={process.env.PUBLIC_URL + comic.coverSrc}
-                />
-              </Link>
-            </div>
-          );
-        })}
+        <div className="col">
+          <div className="comic-gallery-container">
+            {Object.keys(comics).map((key) => {
+              const comic = comics[key];
+              return (
+                <Link to={`comics/${key}`}>
+                  <img
+                    className="img-fluid comic-gallery-cover"
+                    src={process.env.PUBLIC_URL + comic.coverSrc}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
