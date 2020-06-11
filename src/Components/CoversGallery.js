@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 import Masonry from "react-masonry-component";
 
 const comics = getComics();
+const margin = 10;
+const fullWidth = 600;
+const imagesPerRow = 3;
+
 const masonryOptions = {
   transitionDuration: 0,
-  columnWidth: ".grid-sizer",
+  fitWidth: true,
+  resize: true,
+  horizontalOrder: false,
+  gutter: margin,
 };
 
 const imagesLoadedOptions = { background: ".my-bg-image-el" };
@@ -19,23 +26,31 @@ class CoversGallery extends React.Component {
         return (
           <Link to={`comics/${key}`}>
             <div className="image-element-class">
-              <img src={comic.coverSrc} alt="comic cover" />
+              <img
+                src={comic.coverSrc}
+                alt="comic cover"
+                style={{
+                  maxWidth: `${fullWidth / imagesPerRow - margin}px`,
+                  marginBottom: `${margin}px`,
+                }}
+              />
             </div>
           </Link>
         );
       });
 
       return (
-        <Masonry
-          className={"my-gallery-class"} // default ''
-          elementType={"div"} // default 'div'
-          options={masonryOptions} // default {}
-          disableImagesLoaded={false} // default false
-          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-          imagesLoadedOptions={imagesLoadedOptions} // default {}
-        >
-          {childElements}
-        </Masonry>
+        <div style={{ width: `${fullWidth}px` }}>
+          <Masonry
+            className={"my-gallery-class"} // default ''
+            options={masonryOptions} // default {}
+            disableImagesLoaded={false} // default false
+            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+            imagesLoadedOptions={imagesLoadedOptions} // default {}
+          >
+            {childElements}
+          </Masonry>
+        </div>
       );
     }
   }
