@@ -14,38 +14,57 @@ body {
       monospace;
   }
 
+  $headerHeight: 20vh;
+  $footerHeight: 30px;
+
   .header {
-    height: min-height;
+    &,
+    img {
+      height: $headerHeight;
+    }
     background-color: #ffc852;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
 
+  .content {
+    min-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+  }
+
   #pageTitle {
     color: #e36912;
   }
 
-  // .comic-gallery-container {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   display: grid;
-  //   grid-template-columns: repeat(3, 1fr);
-  //   grid-auto-rows: 1fr;
-  //   grid-gap: 16px;
-  // }
-
-  // .comic-gallery-cover {
-  //   width: auto;
-  //   height: 100%;
-  // }
-
   .footer {
-    height: 30px;
+    height: $footerHeight;
     background-color: #ffc852;
   }
 
   .grid-sizer {
     width: 33%;
+  }
+
+  $coversPerRow: (
+    xs: 2,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 4,
+  ) !default;
+  $gutter: 20px;
+
+  .masonryGallery {
+    width: 100%;
+  }
+  .comicCoverContainer,
+  .comicCover {
+    max-width: calc((100vw - #{$grid-gutter-width * 2}) / 2 - #{$gutter});
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        $width: ($container-max-width - ($grid-gutter-width * 2));
+        max-width: $width/map_get($coversPerRow, $breakpoint) - $gutter !important;
+      }
+    }
   }
 }

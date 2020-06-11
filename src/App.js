@@ -12,12 +12,12 @@ import ComicPage from "./Components/ComicPage.js";
 
 const illustrations = getIllustrations();
 
-const App = props => {
+const App = (props) => {
   return (
     <>
       <Router>
         <Header />
-        <div className="content container mt-3 mb-3">
+        <div className="content container pt-3 pb-3">
           <Switch>
             <Route exact component={Temporary} path="/" />
             <Route exact component={Home} path="/home/" />

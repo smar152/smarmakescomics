@@ -4,18 +4,14 @@ import { Link } from "react-router-dom";
 import Masonry from "react-masonry-component";
 
 const comics = getComics();
-const margin = 10;
-const fullWidth = 600;
-const imagesPerRow = 3;
+const margin = 20;
 
 const masonryOptions = {
   transitionDuration: 0,
-  fitWidth: true,
   resize: true,
   horizontalOrder: false,
   gutter: margin,
 };
-
 const imagesLoadedOptions = { background: ".my-bg-image-el" };
 
 class CoversGallery extends React.Component {
@@ -24,28 +20,26 @@ class CoversGallery extends React.Component {
       const childElements = Object.keys(comics).map((key) => {
         const comic = comics[key];
         return (
-          <Link to={`comics/${key}`}>
-            <div className="image-element-class">
+          <div className="comicCoverContainer">
+            <Link to={`comics/${key}`}>
               <img
                 src={comic.coverSrc}
                 alt="comic cover"
+                className="comicCover"
                 style={{
-                  maxWidth: `${fullWidth / imagesPerRow - margin}px`,
                   marginBottom: `${margin}px`,
                 }}
               />
-            </div>
-          </Link>
+            </Link>
+          </div>
         );
       });
 
       return (
-        <div style={{ width: `${fullWidth}px` }}>
+        <div className="comicGallery">
           <Masonry
-            className={"my-gallery-class"} // default ''
+            className="masonryGallery"
             options={masonryOptions} // default {}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
             imagesLoadedOptions={imagesLoadedOptions} // default {}
           >
             {childElements}
