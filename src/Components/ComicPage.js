@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const comics = getComics();
 
-const ComicPage = props => {
+const ComicPage = (props) => {
   const key = props.match.params.onoma;
   const comic = comics[key];
   return (
@@ -17,7 +17,7 @@ const ComicPage = props => {
       </div>
       <div className="col">
         <img
-          className="img-fluid "
+          className="img-fluid"
           src={process.env.PUBLIC_URL + comic.coverSrc}
         />
       </div>

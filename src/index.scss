@@ -28,6 +28,10 @@ body {
     justify-content: center;
   }
 
+  .navigation {
+    background-color: #ffc852;
+  }
+
   .content {
     min-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
   }

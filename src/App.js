@@ -6,17 +6,19 @@ import Home from "./Components/Home";
 import Temporary from "./Components/Temporary";
 import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
-import { getIllustrations } from "./data/illustrationData";
+import Navigation from "./common/Navigation.js";
+import AboutPage from "./Components/AboutPage.js";
+import ContactPage from "./Components/ContactPage.js";
 import IllustrationPage from "./Components/IllustrationPage.js";
 import ComicPage from "./Components/ComicPage.js";
-
-const illustrations = getIllustrations();
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = (props) => {
   return (
     <>
       <Router>
         <Header />
+        <Navigation />
         <div className="content container pt-3 pb-3">
           <Switch>
             <Route exact component={Temporary} path="/" />
@@ -33,6 +35,8 @@ const App = (props) => {
             />
             <Route exact component={ComicsGallery} path="/comics/" />
             <Route exact component={ComicPage} path="/comics/:onoma" />
+            <Route exact component={AboutPage} path="/about/" />
+            <Route exact component={ContactPage} path="/contact/" />
           </Switch>
         </div>
         <Footer />
