@@ -6,7 +6,6 @@ import Home from "./Components/Home";
 import Temporary from "./Components/Temporary";
 import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
-import Navigation from "./common/Navigation.js";
 import AboutPage from "./Components/AboutPage.js";
 import ContactPage from "./Components/ContactPage.js";
 import IllustrationPage from "./Components/IllustrationPage.js";
@@ -18,7 +17,6 @@ const App = (props) => {
     <>
       <Router>
         <Header />
-        <Navigation />
         <div className="content container pt-3 pb-3">
           <Switch>
             <Route exact component={Temporary} path="/" />
