@@ -14,7 +14,11 @@ body {
       monospace;
   }
 
-  $headerHeight: 20vh;
+  h3 {
+    color: #e36912;
+  }
+
+  $headerHeight: 80px;
   $footerHeight: 30px;
 
   .header {

@@ -21,7 +21,7 @@ class CoversGallery extends React.Component {
         const comic = comics[key];
         return (
           <div className="comicCoverContainer">
-            <Link to={`comics/${key}`}>
+            <Link to={`/comics/${key}`}>
               <img
                 src={comic.coverSrc}
                 alt="comic cover"

@@ -5,7 +5,7 @@ const AboutPage = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <p>
             Η Σμαρ γενήθηκε το 1991 και πάντα ζωγράφιζε καραγκιοζάκια. Σπούδασε
             πληροφορική, άσχετο, αλλά μιας και τα λέμε.
@@ -16,11 +16,24 @@ const AboutPage = (props) => {
           </p>
           <p>
             Μένει στην Αθήνα, καταναλώνει σχεδόν αποκλειστικά πόντκαστ, και
-            αναρωτιέται αν θα είναι κάποτε έτοιμη για τις ευθύνες κανα-δύο
+            αναρωτιέται αν θα είναι κάποτε έτοιμη για τις ευθύνες κανα-δυό
             γατιών.
           </p>
+
+          <div className="contact">
+            <h3>Επικοινωνία</h3>
+            <a href="mailto:smarmakescomics@gmail.com">
+              <img src="../img/circle_email.png" alt="instagram" />
+            </a>
+            <a href="https://twitter.com/SmarMakesComics/">
+              <img src="../img/circle_twitter.png" alt="twitter" />
+            </a>
+            <a href="https://www.instagram.com/smarmakescomics/">
+              <img src="../img/circle_insta.png" alt="instagram" />
+            </a>
+          </div>
         </div>
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <img src="../img/about_pic.jpg" className="img-fluid" alt="" />
         </div>
       </div>

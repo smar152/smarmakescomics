@@ -15,7 +15,7 @@ const IllustrationGallery = (props) => {
             const illustration = illustrations[key];
             return (
               <div className="col-6 col-md-4 p-2">
-                <Link to={`illustration/${key}`} key={key}>
+                <Link to={`/illustration/${key}`} key={key}>
                   <img
                     className="img-fluid w-100"
                     src={process.env.PUBLIC_URL + illustration.thumbSrc}

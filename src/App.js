@@ -7,7 +7,6 @@ import Temporary from "./Components/Temporary";
 import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
 import AboutPage from "./Components/AboutPage.js";
-import ContactPage from "./Components/ContactPage.js";
 import IllustrationPage from "./Components/IllustrationPage.js";
 import ComicPage from "./Components/ComicPage.js";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -34,7 +33,6 @@ const App = (props) => {
             <Route exact component={ComicsGallery} path="/comics/" />
             <Route exact component={ComicPage} path="/comics/:onoma" />
             <Route exact component={AboutPage} path="/about/" />
-            <Route exact component={ContactPage} path="/contact/" />
           </Switch>
         </div>
         <Footer />
