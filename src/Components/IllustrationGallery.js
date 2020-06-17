@@ -9,7 +9,9 @@ const IllustrationGallery = (props) => {
   return (
     <div id="illustration">
       <div className="container p-3">
-        <h1 id="pageTitle">Εικονογράφηση</h1>
+        <h1 id="pageTitle" className="row p-2">
+          Εικονογράφηση
+        </h1>
         <div className="row">
           {Object.keys(illustrations).map((key) => {
             const illustration = illustrations[key];

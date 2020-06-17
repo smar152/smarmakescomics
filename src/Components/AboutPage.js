@@ -4,10 +4,11 @@ import * as serviceWorker from "../serviceWorker";
 const AboutPage = (props) => {
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-12 col-md-6">
+      <div className="row d-flex align-items-center">
+        <div className="col-12 col-md-5 ">
+          <h3>Η Σμαρ</h3>
           <p>
-            Η Σμαρ γενήθηκε το 1991 και πάντα ζωγράφιζε καραγκιοζάκια. Σπούδασε
+            γενήθηκε το 1991 και πάντα ζωγράφιζε καραγκιοζάκια. Σπούδασε
             πληροφορική, άσχετο, αλλά μιας και τα λέμε.
           </p>
           <p>
@@ -33,7 +34,7 @@ const AboutPage = (props) => {
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-7">
           <img src="../img/about_pic.jpg" className="img-fluid" alt="" />
         </div>
       </div>

@@ -4,6 +4,20 @@ import { Link } from "react-router-dom";
 
 class Navigation extends Component {
   state = {};
+
+  openMenu() {
+    if (document.querySelector(".drawer").classList.contains("active")) {
+      document.querySelector(".drawer").classList.remove("active");
+    } else {
+      document.querySelector(".drawer").classList.add("active");
+      // document.addEventListener("click", handleClick);
+    }
+  }
+
+  // handleClick() {
+  //   console.log("click!");
+  // }
+
   render() {
     return (
       <>
@@ -18,7 +32,13 @@ class Navigation extends Component {
             <div>about & contact</div>
           </Link>
         </div>
-        <div className="col-5 d-md-none d-flex flex-column">
+        <div className="button" onClick={this.openMenu}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+          </svg>
+        </div>
+
+        <div className="drawer col-5 d-md-none d-flex flex-column">
           <Link to="/comics/">
             <div className="row">comics</div>
           </Link>
