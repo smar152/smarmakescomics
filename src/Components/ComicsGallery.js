@@ -4,8 +4,6 @@ import * as serviceWorker from "../serviceWorker";
 // import { Link } from "react-router-dom";
 import CoversGallery from "./CoversGallery.js";
 
-// const comics = getComics();
-
 const ComicsGallery = (props) => {
   return (
     <div className="container p-3">
@@ -14,16 +12,6 @@ const ComicsGallery = (props) => {
         <div className="col-12">
           <div className="comic-gallery-container">
             <CoversGallery></CoversGallery>
-            {/* //pre-masonry version 
-              return (
-                <Link to={`comics/${key}`}>
-                  <img
-                    className="img-fluid comic-gallery-cover"
-                    src={process.env.PUBLIC_URL + comic.coverSrc}
-                  />
-                </Link>
-              );
-            })} */}
           </div>
         </div>
       </div>

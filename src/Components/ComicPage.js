@@ -10,39 +10,38 @@ const ComicPage = (props) => {
   const comic = comics[key];
   return (
     <div className="container p-3">
+      <Link to="/comics">Comics Gallery</Link>
       <div className="row">
-        <Link to="/comics">Comics Gallery</Link>
         <h1 id="pageTitle">{comic.title}</h1>
-        <p id="pageSubtitle">{comic.subtitle}</p>
       </div>
-      <div className="col">
-        <img
-          className="img-fluid"
-          src={process.env.PUBLIC_URL + comic.coverSrc}
-        />
-      </div>
-      <div className="row pt-3">
-        <p id="pageDescription">{comic.description}</p>
-      </div>
-
-      <div className="col">
-        <img
-          className="img-fluid"
-          src={process.env.PUBLIC_URL + comic.page1src}
-        />
-      </div>
-
-      <div className="col">
-        <img
-          className="img-fluid"
-          src={process.env.PUBLIC_URL + comic.page2src}
-        />
-      </div>
-      <div className="col">
-        <img
-          className="img-fluid"
-          src={process.env.PUBLIC_URL + comic.page3src}
-        />
+      <div className="row">
+        <div className="col-12 col-md-5">
+          <img
+            className="img-fluid"
+            src={process.env.PUBLIC_URL + comic.coverSrc}
+          />
+        </div>
+        <div className="col-12 pt-3 col-md-7">
+          <div className="row">
+            <p id="pageSubtitle">{comic.subtitle}</p>
+          </div>
+          <div className="row">
+            <p id="pageDescription">{comic.description}</p>
+          </div>
+        </div>
+        <div className="row">
+          {comic.pages.map((pagesrc) => {
+            console.log(pagesrc);
+            return (
+              <div className="col">
+                <img
+                  className="img-fluid"
+                  src={process.env.PUBLIC_URL + pagesrc}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -15,6 +15,10 @@ const masonryOptions = {
 const imagesLoadedOptions = { background: ".my-bg-image-el" };
 
 class CoversGallery extends React.Component {
+  state = {
+    hidden: true,
+  };
+
   render() {
     {
       const childElements = Object.keys(comics).map((key) => {
@@ -38,9 +42,12 @@ class CoversGallery extends React.Component {
       return (
         <div className="comicGallery">
           <Masonry
-            className="masonryGallery"
+            className={this.state.hidden ? "hidden" : ""}
             options={masonryOptions} // default {}
             imagesLoadedOptions={imagesLoadedOptions} // default {}
+            onImagesLoaded={() =>
+              this.setState({ ...this.state, hidden: false })
+            }
           >
             {childElements}
           </Masonry>
