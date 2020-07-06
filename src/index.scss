@@ -111,4 +111,12 @@ body {
       }
     }
   }
+
+  .modal {
+    background-color: $mango;
+
+    img {
+      max-height: 80px;
+    }
+  }
 }
