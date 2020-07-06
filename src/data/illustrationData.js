@@ -10,28 +10,28 @@ const illustrations = {
   },
   poisonous: {
     thumbSrc: "/img/IllustrationThumb1.jpg",
-    src: "/img/illustrations/Mermay10.jpg",
+    src: "/img/illustrations/Inktober_Poison.jpg",
     title: "Poisonous",
     subtitle: "Made for the Inktober challenge, 2018",
     description: "Personal project",
   },
   trees: {
     thumbSrc: "/img/IllustrationThumb2.jpg",
-    src: "/img/illustrations/Mermay10.jpg",
+    src: "/img/illustrations/Trees650.jpg",
     title: "Trees",
     subtitle: "Made for the Trees exhibition, 2018",
     description: "Exhibition lorem ipsum dolor sit amet",
   },
   worldCup: {
     thumbSrc: "/img/IllustrationThumb3.jpg",
-    src: "/img/illustrations/Mermay10.jpg",
+    src: "/img/illustrations/col_pol.jpg",
     title: "Poland - Colombia",
     subtitle: "Illustration Practice based on a photograph, 2018",
     description: "Personal project",
   },
   christmas: {
     thumbSrc: "/img/IllustrationThumb4.jpg",
-    src: "/img/illustrations/Mermay10.jpg",
+    src: "/img/illustrations/JazzChristmas.jpg",
     title: "Christmas Jazz",
     subtitle: "Poster Design for a school concert",
     description:
@@ -39,8 +39,8 @@ const illustrations = {
   },
   rubbish: {
     thumbSrc: "/img/IllustrationThumb5.jpg",
-    src: "/img/illustrations/Mermay10.jpg",
-    title: "Christmas Jazz",
+    src: "/img/illustrations/AthensFull.jpg",
+    title: "Αθηναία Γειτόνισσα",
     subtitle: "Poster Design for a school concert",
     description:
       "Designed for the Christmas concert by the children's choir of an elementary school",

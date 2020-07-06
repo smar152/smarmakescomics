@@ -43,6 +43,7 @@ body {
     height: 30px;
     margin: 30px;
     cursor: pointer;
+    animation: rotation 2s infinite linear;
   }
 
   .drawer {
@@ -54,6 +55,7 @@ body {
     transform: translateX(200px);
     transition-duration: 1s;
     padding: 40px;
+    margin-top: 80px;
     text-align: right;
     :visited,
     :link {
@@ -72,6 +74,10 @@ body {
 
   #pageTitle {
     color: $orange;
+  }
+
+  .comicPage {
+    cursor: pointer;
   }
 
   .footer {

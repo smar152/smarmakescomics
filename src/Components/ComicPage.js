@@ -8,16 +8,26 @@ const comics = getComics();
 const ComicPage = (props) => {
   const key = props.match.params.onoma;
   const comic = comics[key];
+
+  const openGallery = (url) => {
+    console.log("hello image ", url);
+  };
+
   return (
     <div className="container p-3">
-      <Link to="/comics">Comics Gallery</Link>
+      <div className="row">
+        <Link to="/comics">Comics Gallery</Link>
+      </div>
       <div className="row">
         <h1 id="pageTitle">{comic.title}</h1>
       </div>
       <div className="row">
         <div className="col-12 col-md-5">
           <img
-            className="img-fluid"
+            onClick={() => {
+              openGallery(process.env.PUBLIC_URL + comic.coverSrc);
+            }}
+            className="img-fluid comicPage"
             src={process.env.PUBLIC_URL + comic.coverSrc}
           />
         </div>
@@ -35,7 +45,8 @@ const ComicPage = (props) => {
             return (
               <div className="col">
                 <img
-                  className="img-fluid"
+                  onClick={() => openGallery(process.env.PUBLIC_URL + pagesrc)}
+                  className="img-fluid comicPage"
                   src={process.env.PUBLIC_URL + pagesrc}
                 />
               </div>
