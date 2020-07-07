@@ -112,6 +112,20 @@ body {
     }
   }
 
+  .illustrationImage {
+    height: auto;
+    max-width: 90vw;
+    max-height: 75vh;
+    @include media-breakpoint-up(md, $grid-breakpoints) {
+      height: 75vh;
+      width: auto;
+    }
+  }
+
+  .scaledIcon {
+    transform: scaleY(1.5);
+  }
+
   .modal {
     background-color: $mango;
 
