@@ -1,67 +1,67 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import * as serviceWorker from "../serviceWorker";
 import { Link } from "react-router-dom";
 
-class Navigation extends Component {
-  state = {};
+function Navigation() {
+  const [isOpen, setOpen] = useState(false);
 
-  openMenu() {
-    if (document.querySelector(".drawer").classList.contains("active")) {
-      document.querySelector(".drawer").classList.remove("active");
-      document.querySelector(".button").style.transform = "none";
-    } else {
-      document.querySelector(".drawer").classList.add("active");
-      document.querySelector(".button").style.transform = "rotate(90deg)";
-      // document.addEventListener("click", handleClick);
-    }
-  }
+  const openMenu = () => {
+    setOpen(true);
+  };
+  const closeMenu = () => {
+    setOpen(false);
+  };
+  const toggleMenu = () => {
+    setOpen(!isOpen);
+  };
 
-  // handleClick() {
-  //   console.log("click!");
-  // }
+  const MenuLinks = () => (
+    <>
+      <Link to="/comics/" onClick={closeMenu}>
+        <div>comics</div>
+      </Link>
+      <Link to="/illustration/" onClick={closeMenu}>
+        <div>illustration</div>
+      </Link>
+      <Link to="/about/" onClick={closeMenu}>
+        <div>about & contact</div>
+      </Link>
+    </>
+  );
 
-  render() {
-    return (
-      <>
-        <div className="navigation col-md-8 col-lg-6 d-none d-md-flex flex-row align-items-center justify-content-between">
-          <Link to="/comics/">
-            <div>comics</div>
-          </Link>
-          <Link to="/illustration/">
-            <div>illustration</div>
-          </Link>
-          <Link to="/about/">
-            <div>about & contact</div>
-          </Link>
-        </div>
+  return (
+    <>
+      {/* Desktop Navigation */}
+      <div className="navigation col-md-8 col-lg-6 d-none d-md-flex flex-row align-items-center justify-content-between">
+        <MenuLinks />
+      </div>
 
-        <div
-          className="col-8  d-flex flex-row align-items-end justify-content-end d-md-none"
-          onClick={this.openMenu}
+      {/* Phone Navigation */}
+      <div
+        className="col-8  d-flex flex-row align-items-end justify-content-end d-md-none"
+        onClick={toggleMenu}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="button"
+          style={{
+            transform: isOpen ? "rotate(90deg)" : "none",
+          }}
+          viewBox="0 0 448 512"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="button"
-            viewBox="0 0 448 512"
-          >
-            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
-          </svg>
-        </div>
+          <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+        </svg>
+      </div>
 
-        <div className="drawer col-5 d-md-none d-flex flex-column">
-          <Link to="/comics/">
-            <div className="row">comics</div>
-          </Link>
-          <Link to="/illustration/">
-            <div className="row">illustration</div>
-          </Link>
-          <Link to="/about/">
-            <div className="row">about & contact</div>
-          </Link>
-        </div>
-      </>
-    );
-  }
+      <div
+        className={`drawer col-5 d-md-none d-flex flex-column ${
+          isOpen ? "active" : ""
+        }`}
+      >
+        <MenuLinks />
+      </div>
+    </>
+  );
 }
 
 export default Navigation;

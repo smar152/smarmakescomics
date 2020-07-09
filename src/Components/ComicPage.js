@@ -42,17 +42,11 @@ const ComicPage = (props) => {
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
-  const [currentComicPageSrc, setCurrentComicPageSrc] = React.useState(0);
   let [currentIndex, setCurrentIndex] = React.useState(0);
   let keys = Object(comic.pages);
-  let [caption, setCaption] = React.useState("caption");
   keys = [comic.coverSrc, ...keys];
 
   const handleOpen = (comicSrc) => {
-    setCurrentComicPageSrc(comicSrc);
-    setCurrentIndex(keys.indexOf(currentComicPageSrc));
-    let text = `Page ${currentIndex} out of ${keys.length - 1}`;
-    setCaption(text);
     setOpen(true);
   };
 
@@ -61,29 +55,23 @@ const ComicPage = (props) => {
   };
 
   const showNextComicPage = () => {
-    currentIndex = keys.indexOf(currentComicPageSrc);
-    let nextSrc;
+    let nextIndex = currentIndex + 1;
 
-    if (currentIndex >= keys.length - 1) {
-      nextSrc = keys[0];
-    } else {
-      nextSrc = keys[currentIndex + 1];
+    if (nextIndex >= keys.length) {
+      nextIndex = 0;
     }
 
-    setCurrentComicPageSrc(nextSrc);
+    setCurrentIndex(nextIndex);
   };
 
   const showPreviousIllustration = () => {
-    currentIndex = keys.indexOf(currentComicPageSrc);
-    let previousSrc;
+    let previousIndex = currentIndex - 1;
 
-    if (currentIndex === 0) {
-      previousSrc = keys[keys.length - 1];
-    } else {
-      previousSrc = keys[currentIndex - 1];
+    if (previousIndex < 0) {
+      previousIndex = keys.length - 1;
     }
 
-    setCurrentComicPageSrc(previousSrc);
+    setCurrentIndex(previousIndex);
   };
 
   return (
@@ -97,15 +85,12 @@ const ComicPage = (props) => {
         >
           <div
             style={modalStyle}
-            className={`${classes.paper} d-flex flex-column justify-content-center align-items-center`}
+            className={`${classes.paper} smarModal d-flex flex-column justify-content-center align-items-center`}
           >
-            <div>
-              <CloseIcon
-                onClick={handleClose}
-                className="d-flex flex-row align-items-center justify-content-end w-100"
-              ></CloseIcon>
+            <div className="d-flex flex-row align-items-center justify-content-end w-100">
+              <CloseIcon onClick={handleClose}></CloseIcon>
             </div>
-            <div className="row d-flex flex-row align-items-center justify-content-center w-100">
+            <div className="row d-flex flex-row align-items-center justify-content-between w-100">
               <div className="d-flex flex-column align-items-center justify-content-center">
                 <ArrowBackIosOutlinedIcon
                   className="scaledIcon"
@@ -114,7 +99,7 @@ const ComicPage = (props) => {
               </div>
               <img
                 className="illustrationImage"
-                src={process.env.PUBLIC_URL + currentComicPageSrc}
+                src={process.env.PUBLIC_URL + keys[currentIndex]}
               />
               <div className="d-flex flex-column align-items-center justify-content-center">
                 <ArrowForwardIosOutlinedIcon
@@ -124,7 +109,7 @@ const ComicPage = (props) => {
               </div>
             </div>
             <p id="simple-modal-description" className="mt-4">
-              {caption}
+              {`Page ${currentIndex} out of ${keys.length - 1}`}
             </p>
           </div>
         </Modal>

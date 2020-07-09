@@ -85,15 +85,12 @@ const IllustrationGallery = (props) => {
         >
           <div
             style={modalStyle}
-            className={`${classes.paper} d-flex flex-column justify-content-center align-items-center`}
+            className={`${classes.paper} smarModal d-flex flex-column justify-content-center align-items-center`}
           >
-            <div>
-              <CloseIcon
-                onClick={handleClose}
-                className="d-flex flex-row align-items-center justify-content-end w-100"
-              ></CloseIcon>
+            <div className="d-flex flex-row align-items-center justify-content-end w-100">
+              <CloseIcon onClick={handleClose}></CloseIcon>
             </div>
-            <div className="row d-flex flex-row align-items-center justify-content-center w-100">
+            <div className="row d-flex flex-row align-items-center justify-content-between w-100">
               <div className="d-flex flex-column align-items-center justify-content-center">
                 <ArrowBackIosOutlinedIcon
                   className="scaledIcon"
