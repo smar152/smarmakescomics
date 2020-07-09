@@ -23,7 +23,7 @@ class Navigation extends Component {
   render() {
     return (
       <>
-        <div className="col-5 d-none d-md-flex flex-row align-items-center justify-content-between">
+        <div className="navigation col-md-8 col-lg-6 d-none d-md-flex flex-row align-items-center justify-content-between">
           <Link to="/comics/">
             <div>comics</div>
           </Link>
@@ -34,8 +34,16 @@ class Navigation extends Component {
             <div>about & contact</div>
           </Link>
         </div>
-        <div className="button d-md-none" onClick={this.openMenu}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+
+        <div
+          className="col-8  d-flex flex-row align-items-end justify-content-end d-md-none"
+          onClick={this.openMenu}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="button"
+            viewBox="0 0 448 512"
+          >
             <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
           </svg>
         </div>

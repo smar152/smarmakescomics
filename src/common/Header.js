@@ -10,7 +10,7 @@ class Header extends Component {
       <div className="header">
         <div className="container">
           <div className="row">
-            <div className="col-7">
+            <div className="col-4 col-lg-6">
               <Link to="/home/">
                 <img src={process.env.PUBLIC_URL + "/img/Logo.png"} />
               </Link>

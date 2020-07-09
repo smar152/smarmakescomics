@@ -88,10 +88,13 @@ const IllustrationGallery = (props) => {
             className={`${classes.paper} d-flex flex-column justify-content-center align-items-center`}
           >
             <div>
-              <CloseIcon onClick={handleClose}></CloseIcon>
+              <CloseIcon
+                onClick={handleClose}
+                className="d-flex flex-row align-items-center justify-content-end w-100"
+              ></CloseIcon>
             </div>
-            <div className="row">
-              <div>
+            <div className="row d-flex flex-row align-items-center justify-content-center w-100">
+              <div className="d-flex flex-column align-items-center justify-content-center">
                 <ArrowBackIosOutlinedIcon
                   className="scaledIcon"
                   onClick={showPreviousIllustration}
@@ -104,7 +107,7 @@ const IllustrationGallery = (props) => {
                   illustrations[currentIllustrationKey].src
                 }
               />
-              <div>
+              <div className="d-flex flex-column align-items-center justify-content-center">
                 <ArrowForwardIosOutlinedIcon
                   className="scaledIcon"
                   onClick={showNextIllustration}

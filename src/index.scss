@@ -37,6 +37,13 @@ body {
 
   .navigation {
     background-color: $mango;
+    a {
+      color: #e36912;
+      //filter: drop-shadow(2px 2px 2px white);
+      text-decoration: none;
+    }
+    font-size: 1.6em;
+    font-weight: 500;
   }
 
   svg {
@@ -47,6 +54,7 @@ body {
   }
 
   .drawer {
+    z-index: 1;
     position: fixed;
     right: 0px;
     width: 200px;
