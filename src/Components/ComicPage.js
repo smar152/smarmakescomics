@@ -43,10 +43,17 @@ const ComicPage = (props) => {
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
   const [currentComicPageSrc, setCurrentComicPageSrc] = React.useState(0);
+  let [currentIndex, setCurrentIndex] = React.useState(0);
+  let keys = Object(comic.pages);
+  let [caption, setCaption] = React.useState("caption");
+  keys = [comic.coverSrc, ...keys];
 
   const handleOpen = (comicSrc) => {
-    setOpen(true);
     setCurrentComicPageSrc(comicSrc);
+    setCurrentIndex(keys.indexOf(currentComicPageSrc));
+    let text = `Page ${currentIndex} out of ${keys.length - 1}`;
+    setCaption(text);
+    setOpen(true);
   };
 
   const handleClose = () => {
@@ -54,35 +61,29 @@ const ComicPage = (props) => {
   };
 
   const showNextComicPage = () => {
-    const keys = Object(comic.pages);
-    const currentIndex = keys.indexOf(currentComicPageSrc);
-    let nextIndex = currentIndex + 1;
-    if (nextIndex > keys.length - 1) {
-      nextIndex = -1;
-    }
-    if (nextIndex == -1) {
-      setCurrentComicPageSrc(comic.coverSrc);
+    currentIndex = keys.indexOf(currentComicPageSrc);
+    let nextSrc;
+
+    if (currentIndex >= keys.length - 1) {
+      nextSrc = keys[0];
     } else {
-      const nextSrc = keys[nextIndex];
-      setCurrentComicPageSrc(nextSrc);
+      nextSrc = keys[currentIndex + 1];
     }
+
+    setCurrentComicPageSrc(nextSrc);
   };
 
   const showPreviousIllustration = () => {
-    const keys = Object(comic.pages);
-    const currentIndex = keys.indexOf(currentComicPageSrc);
-    let previousIndex = currentIndex - 1;
-    if (previousIndex == -1) {
-      previousIndex = -1;
-    } else if (previousIndex == -2) {
-      previousIndex = keys.length - 1;
-    }
-    if (previousIndex == -1) {
-      setCurrentComicPageSrc(comic.coverSrc);
+    currentIndex = keys.indexOf(currentComicPageSrc);
+    let previousSrc;
+
+    if (currentIndex === 0) {
+      previousSrc = keys[keys.length - 1];
     } else {
-      const previousSrc = keys[previousIndex];
-      setCurrentComicPageSrc(previousSrc);
+      previousSrc = keys[currentIndex - 1];
     }
+
+    setCurrentComicPageSrc(previousSrc);
   };
 
   return (
@@ -123,7 +124,7 @@ const ComicPage = (props) => {
               </div>
             </div>
             <p id="simple-modal-description" className="mt-4">
-              Page 0 out of 2
+              {caption}
             </p>
           </div>
         </Modal>
