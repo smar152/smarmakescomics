@@ -142,4 +142,87 @@ body {
       }
     }
   }
+
+  svg {
+    .smarHome {
+      width: 400px;
+    }
+    .cls-1 {
+      fill: #fff;
+    }
+    .cls-2 {
+      fill: #ffc854;
+    }
+    .cls-3 {
+      fill: #e26a26;
+    }
+    .cls-10,
+    .cls-12,
+    .cls-18,
+    .cls-4 {
+      fill: none;
+    }
+    .cls-10,
+    .cls-13,
+    .cls-18,
+    .cls-4 {
+      stroke: #231f20;
+      stroke-miterlimit: 10;
+    }
+    .cls-10,
+    .cls-18,
+    .cls-4 {
+      stroke-linecap: round;
+    }
+    .cls-4 {
+      stroke-width: 3px;
+    }
+    .cls-5 {
+      fill: #e1f3f7;
+    }
+    .cls-6 {
+      fill: #b6ddea;
+    }
+    .cls-7 {
+      fill: #6c647e;
+    }
+    .cls-8 {
+      fill: #538f9d;
+    }
+    .cls-9 {
+      fill: #575f69;
+    }
+    .cls-10,
+    .cls-13 {
+      stroke-width: 2px;
+    }
+    .cls-11 {
+      fill: #498994;
+    }
+    .cls-13 {
+      fill: #ffeec8;
+    }
+    .cls-14 {
+      fill: #fab490;
+    }
+    .cls-15 {
+      fill: #362526;
+    }
+    .cls-16 {
+      fill: #433b52;
+    }
+    .cls-17 {
+      fill: #3d2020;
+    }
+    .cls-18 {
+      stroke-width: 5px;
+    }
+    .cls-19 {
+      fill: #231f20;
+    }
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
 }
