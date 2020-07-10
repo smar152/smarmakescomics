@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PaintingPaths from "./svg/PaintingPaths";
 import BookPaths from "./svg/BookPaths";
@@ -9,9 +9,19 @@ function Home(props) {
   const [paintingClass, setPaintingClass] = useState("");
   const [bookClass, setBookClass] = useState("");
   const [smarClass, setSmarClass] = useState("");
+  const [changeLocation, setChangeLocation] = useState(""); // what should the final location after a click be - nothing for hover
+  const [animationRunning, setAnimationRunning] = useState(false);
+
+  const onAnimationEnd = (e) => {
+    if (changeLocation) {
+      props.history.push(changeLocation);
+    }
+    setAnimationRunning(false);
+  };
+
   return (
-    <div className="row  h-100">
-      <div className="col  h-100">
+    <div className="row h-100">
+      <div className="col h-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xlink="http://www.w3.org/1999/xlink"
@@ -19,15 +29,25 @@ function Home(props) {
           className="h-100 w-100"
         >
           <defs></defs>
-          <title>homeSmar</title>
           <g
             id="Painting"
             data-name="Layer 3"
             className={paintingClass}
-            onMouseEnter={() =>
-              setPaintingClass("animate__animated animate__pulse")
-            }
-            onAnimationEnd={() => setPaintingClass("")}
+            onClick={(e) => {
+              setAnimationRunning(true);
+              setChangeLocation("/illustration");
+              setPaintingClass("animate__animated animate__pulse");
+            }}
+            onMouseOver={(e) => {
+              if (!animationRunning) {
+                setChangeLocation(null);
+              }
+              setPaintingClass("animate__animated animate__pulse");
+            }}
+            onAnimationEnd={(e) => {
+              setPaintingClass("");
+              onAnimationEnd(e);
+            }}
           >
             <PaintingPaths />
           </g>
@@ -35,10 +55,21 @@ function Home(props) {
             id="Book"
             data-name="Layer 4"
             className={bookClass}
-            onMouseEnter={() =>
-              setBookClass("animate__animated animate__swing")
-            }
-            onAnimationEnd={() => setBookClass("")}
+            onClick={(e) => {
+              setAnimationRunning(true);
+              setChangeLocation("/comics");
+              setBookClass("animate__animated animate__swing");
+            }}
+            onMouseOver={(e) => {
+              if (!animationRunning) {
+                setChangeLocation(null);
+              }
+              setBookClass("animate__animated animate__swing");
+            }}
+            onAnimationEnd={(e) => {
+              setBookClass("");
+              onAnimationEnd(e);
+            }}
           >
             <BookPaths />
           </g>
@@ -46,10 +77,21 @@ function Home(props) {
             id="Smar"
             data-name="Layer 2"
             className={smarClass}
-            onMouseEnter={() =>
-              setSmarClass("animate__animated animate__headShake")
-            }
-            onAnimationEnd={() => setSmarClass("")}
+            onClick={(e) => {
+              setAnimationRunning(true);
+              setChangeLocation("/about");
+              setSmarClass("animate__animated animate__headShake");
+            }}
+            onMouseOver={(e) => {
+              if (!animationRunning) {
+                setChangeLocation(null);
+              }
+              setSmarClass("animate__animated animate__headShake");
+            }}
+            onAnimationEnd={(e) => {
+              setSmarClass("");
+              onAnimationEnd(e);
+            }}
           >
             <SmarPaths />
           </g>

@@ -4,7 +4,7 @@ import * as serviceWorker from "../serviceWorker";
 const AboutPage = (props) => {
   return (
     <div className="container">
-      <div className="row d-flex align-items-center">
+      <div className="row ">
         <div className="col-12 col-md-5 ">
           <h3>Η Σμαρ</h3>
           <p>
