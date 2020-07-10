@@ -38,7 +38,7 @@ function Navigation() {
 
       {/* Phone Navigation */}
       <div
-        className="col-8  d-flex flex-row align-items-end justify-content-end d-md-none"
+        className="col-8  d-flex flex-row  align-items-center justify-content-end d-md-none"
         onClick={toggleMenu}
       >
         <svg

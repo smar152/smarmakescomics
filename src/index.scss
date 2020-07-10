@@ -77,7 +77,15 @@ body {
   }
 
   .content {
+    overflow: auto;
+  }
+
+  .minHeightLayout {
     min-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+  }
+
+  .maxHeightLayout {
+    height: calc(100vh - #{$headerHeight} - #{$footerHeight});
   }
 
   #pageTitle {

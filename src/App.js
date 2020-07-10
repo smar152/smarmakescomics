@@ -11,30 +11,84 @@ import IllustrationPage from "./Components/IllustrationPage.js";
 import ComicPage from "./Components/ComicPage.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const MinHeightLayout = ({ children }) => (
+  <div className="content minHeightLayout">
+    <div className="container h-100 pt-3 pb-3">{children}</div>
+  </div>
+);
+
+const MaxHeightLayout = ({ children }) => (
+  <div className="content maxHeightLayout">
+    <div className="container h-100 pt-3 pb-3">{children}</div>
+  </div>
+);
+
+const routes = [
+  {
+    component: Temporary,
+    path: "/",
+    layout: MinHeightLayout,
+  },
+  {
+    component: Home,
+    path: "/home",
+    layout: MaxHeightLayout,
+  },
+  {
+    component: IllustrationGallery,
+    path: "/illustration",
+    layout: MinHeightLayout,
+  },
+  {
+    component: IllustrationPage,
+    path: "/illustration/:onoma",
+    layout: MinHeightLayout,
+  },
+  {
+    component: ComicsGallery,
+    path: "/comics",
+    layout: MinHeightLayout,
+  },
+  {
+    component: ComicPage,
+    path: "/comics/:onoma",
+    layout: MinHeightLayout,
+  },
+  {
+    component: AboutPage,
+    path: "/about",
+    layout: MinHeightLayout,
+  },
+];
+
+const RouteWrapper = ({ component: Component, layout: Layout, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) => (
+        <Layout {...props}>
+          <Component {...props} />
+        </Layout>
+      )}
+    />
+  );
+};
+
 const App = (props) => {
   return (
     <>
       <Router>
         <Header />
-        <div className="content container pt-3 pb-3">
-          <Switch>
-            <Route exact component={Temporary} path="/" />
-            <Route exact component={Home} path="/home/" />
-            <Route
+        <Switch>
+          {routes.map(({ component, path, layout }) => (
+            <RouteWrapper
               exact
-              component={IllustrationGallery}
-              path="/illustration/"
+              component={component}
+              path={path}
+              layout={layout}
             />
-            <Route
-              exact
-              component={IllustrationPage}
-              path="/illustration/:onoma"
-            />
-            <Route exact component={ComicsGallery} path="/comics/" />
-            <Route exact component={ComicPage} path="/comics/:onoma" />
-            <Route exact component={AboutPage} path="/about/" />
-          </Switch>
-        </div>
+          ))}
+        </Switch>
         <Footer />
       </Router>
     </>
