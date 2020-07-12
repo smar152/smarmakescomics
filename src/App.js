@@ -25,13 +25,8 @@ const MaxHeightLayout = ({ children }) => (
 
 const routes = [
   {
-    component: Temporary,
-    path: "/",
-    layout: MinHeightLayout,
-  },
-  {
     component: Home,
-    path: "/home",
+    path: "/",
     layout: MaxHeightLayout,
   },
   {
@@ -86,6 +81,7 @@ const App = (props) => {
               component={component}
               path={path}
               layout={layout}
+              key={path}
             />
           ))}
         </Switch>

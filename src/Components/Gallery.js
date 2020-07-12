@@ -112,7 +112,7 @@ const Gallery = ({
         <div className="row">
           {imagesBelow.map(({ src }) => {
             return (
-              <div className={imgContainerClasses}>
+              <div className={imgContainerClasses} key={src}>
                 <img onClick={handleOpen} className={imgClasses} src={src} />
               </div>
             );
