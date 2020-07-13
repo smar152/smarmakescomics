@@ -62,10 +62,14 @@ const ComicPage = (props) => {
         </div>
         <div className="col-10">
           <div className="row">
-            <Link to="/comics">Κόμικς</Link>
+            <div className="col">
+              <Link to="/comics">Κόμικς</Link>
+            </div>
           </div>
           <div className="row">
-            <h1 id="pageTitle">{comic.title}</h1>
+            <div className="col">
+              <h1 id="pageTitle">{comic.title}</h1>
+            </div>
           </div>
           <Gallery images={images} hasCover={true} />
         </div>

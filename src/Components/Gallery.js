@@ -40,8 +40,10 @@ const Gallery = ({
     };
   }
 
-  const handleOpen = () => {
+  const handleOpen = (actualIndex) => {
     setOpen(true);
+    console.log("currentIndex should be: ", actualIndex);
+    setCurrentIndex(actualIndex);
   };
 
   const handleClose = () => {
@@ -89,7 +91,8 @@ const Gallery = ({
         <div className="col-12 col-md-5">
           <img
             onClick={() => {
-              handleOpen(process.env.PUBLIC_URL + firstImage.src);
+              const actualIndex = 0;
+              handleOpen(actualIndex);
             }}
             className="img-fluid comicPage"
             src={process.env.PUBLIC_URL + firstImage.src}
@@ -110,10 +113,17 @@ const Gallery = ({
       {/* rest of pages */}
       <div className="col-12">
         <div className="row">
-          {imagesBelow.map(({ src }) => {
+          {imagesBelow.map(({ src }, index) => {
             return (
-              <div className={imgContainerClasses} key={src}>
-                <img onClick={handleOpen} className={imgClasses} src={src} />
+              <div className={imgContainerClasses}>
+                <img
+                  onClick={() => {
+                    const actualIndex = hasCover ? index + 1 : index;
+                    handleOpen(actualIndex);
+                  }}
+                  className={imgClasses}
+                  src={src}
+                />
               </div>
             );
           })}
@@ -149,7 +159,8 @@ const Gallery = ({
             </div>
           </div>
           <p id="simple-modal-description" className="mt-4">
-            {`Page ${currentIndex} out of ${images.length - 1}`}
+            {hasCover && `Page ${currentIndex} out of ${images.length - 1}`}
+            {!hasCover && `${currentImage.subtitle}`}
           </p>
         </div>
       </Modal>
