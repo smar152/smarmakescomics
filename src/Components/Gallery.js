@@ -135,7 +135,12 @@ const Gallery = ({
                 onClick={showPreviousIllustration}
               />
             </div>
-            <img className="illustrationImage" src={currentSrc} />
+
+            {hasCover && <img className="illustrationImage" src={currentSrc} />}
+            {!hasCover && (
+              <img className="illustrationImage" src={currentImage.fullSrc} />
+            )}
+
             <div className="d-flex flex-column align-items-center justify-content-center">
               <ArrowForwardIosOutlinedIcon
                 className="scaledIcon"

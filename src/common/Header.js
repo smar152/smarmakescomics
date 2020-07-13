@@ -12,7 +12,10 @@ class Header extends Component {
           <div className="row">
             <div className="col-4 col-lg-6">
               <Link to="/">
-                <img src={process.env.PUBLIC_URL + "/img/Logo.png"} />
+                <img
+                  src={process.env.PUBLIC_URL + "/img/Logo.png"}
+                  alt="Smar logo"
+                />
               </Link>
             </div>
             <Navigation />

@@ -1,5 +1,3 @@
-import React from "react";
-
 const illustrations = {
   mermay: {
     thumbSrc: "/img/IllustrationThumb0.jpg",

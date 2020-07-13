@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import PaintingPaths from "./svg/PaintingPaths";
 import BookPaths from "./svg/BookPaths";
 import SmarPaths from "./svg/SmarPaths";

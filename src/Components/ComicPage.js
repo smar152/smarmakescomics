@@ -51,20 +51,32 @@ const ComicPage = (props) => {
 
   return (
     <>
-      <div className="container p-3">
-        <div className="row">
+      <div className="row">
+        <div className="col d-flex align-items-center">
           <a>
-            <ArrowBackIosOutlinedIcon onClick={onPreviousComic} />
-          </a>
-          <Link to="/comics">Comics Gallery</Link>
-          <a>
-            <ArrowForwardIosOutlinedIcon onClick={onNextComic} />
+            <ArrowBackIosOutlinedIcon
+              className="scaledIcon"
+              onClick={onPreviousComic}
+            />
           </a>
         </div>
-        <div className="row">
-          <h1 id="pageTitle">{comic.title}</h1>
+        <div className="col-10">
+          <div className="row">
+            <Link to="/comics">Κόμικς</Link>
+          </div>
+          <div className="row">
+            <h1 id="pageTitle">{comic.title}</h1>
+          </div>
+          <Gallery images={images} hasCover={true} />
         </div>
-        <Gallery images={images} hasCover={true} />
+        <div className="col d-flex align-items-center">
+          <a>
+            <ArrowForwardIosOutlinedIcon
+              className="scaledIcon"
+              onClick={onNextComic}
+            />
+          </a>
+        </div>
       </div>
     </>
   );

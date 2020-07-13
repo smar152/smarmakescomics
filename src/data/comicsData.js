@@ -1,5 +1,3 @@
-import React from "react";
-
 const comics = {
   myalo: {
     coverSrc: "/img/comicCovers/MyaloCover.jpg",

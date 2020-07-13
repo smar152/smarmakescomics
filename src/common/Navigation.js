@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 function Navigation() {
   const [isOpen, setOpen] = useState(false);
 
-  const openMenu = () => {
-    setOpen(true);
-  };
+  // const openMenu = () => {
+  //   setOpen(true);
+  // };
   const closeMenu = () => {
     setOpen(false);
   };
