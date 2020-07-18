@@ -1,7 +1,5 @@
 import React from "react";
 import * as serviceWorker from "../serviceWorker";
-// import { getComics } from "../data/comicsData";
-// import { Link } from "react-router-dom";
 import CoversGallery from "./CoversGallery.js";
 
 const ComicsGallery = (props) => {

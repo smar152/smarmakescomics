@@ -74,6 +74,16 @@ const shops = {
       },
     },
   },
+  digital: {
+    label: "Ψηφιακά",
+    shops: {
+      gumroad: {
+        name: "Gumroad",
+        area: "",
+        website: "https://gumroad.com/smar/",
+      },
+    },
+  },
 };
 
 export function getShops() {

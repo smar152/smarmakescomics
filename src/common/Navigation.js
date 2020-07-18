@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 function Navigation() {
   const [isOpen, setOpen] = useState(false);
 
-  // const openMenu = () => {
-  //   setOpen(true);
-  // };
   const closeMenu = () => {
     setOpen(false);
   };
@@ -18,13 +15,16 @@ function Navigation() {
   const MenuLinks = () => (
     <>
       <Link to="/comics/" onClick={closeMenu}>
-        <div>comics</div>
+        <div>κόμικς</div>
       </Link>
       <Link to="/illustration/" onClick={closeMenu}>
-        <div>illustration</div>
+        <div>εικονογράφηση</div>
+      </Link>
+      <Link to="/shops/" onClick={closeMenu}>
+        <div>αγορές</div>
       </Link>
       <Link to="/about/" onClick={closeMenu}>
-        <div>about & contact</div>
+        <div>η σμαρ</div>
       </Link>
     </>
   );
