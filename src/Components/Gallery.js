@@ -4,6 +4,7 @@ import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 /**
  * React class to show an image that opens a modal with pagination
@@ -12,7 +13,7 @@ const Gallery = ({
   hasCover = false,
   images = [],
   imgContainerClasses = "col",
-  imgClasses = "img-fluid w-100",
+  imgClasses = "img-fluid w-100 clickable",
 }) => {
   const [firstImage, ...restOfImages] = images;
   const [isOpen, setOpen] = React.useState(false);
@@ -107,6 +108,13 @@ const Gallery = ({
           </div>
           <div className="row">
             <p id="pageDescription">{firstImage.description}</p>
+            <p>
+              {hasCover && (
+                <Link to="/shops/">
+                  <div>Πού θα βρείτε τεύχη</div>
+                </Link>
+              )}
+            </p>
           </div>
         </div>
       )}
@@ -160,7 +168,7 @@ const Gallery = ({
           </div>
           <p id="simple-modal-description" className="mt-4">
             {hasCover && `Page ${currentIndex} out of ${images.length - 1}`}
-            {!hasCover && `${currentImage.subtitle}`}
+            {!hasCover && `${currentImage.description}`}
           </p>
         </div>
       </Modal>

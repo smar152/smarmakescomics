@@ -7,6 +7,7 @@ import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
 import AboutPage from "./Components/AboutPage.js";
 import ComicPage from "./Components/ComicPage.js";
+import Shops from "./Components/Shops.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const MinHeightLayout = ({ children }) => (
@@ -45,6 +46,11 @@ const routes = [
   {
     component: AboutPage,
     path: "/about",
+    layout: MinHeightLayout,
+  },
+  {
+    component: Shops,
+    path: "/shops",
     layout: MinHeightLayout,
   },
 ];
