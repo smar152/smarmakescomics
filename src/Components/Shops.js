@@ -14,36 +14,31 @@ const Shops = (props) => {
             <h1 id="pageTitle">Πού Θα βρείτε κόμικς</h1>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <h4>Αθήνα</h4>
-            {Object.keys(shops["athens"]).map((key) => (
-              <a href={shops["athens"][key].website}>
-                <p>
-                  {shops["athens"][key].name}, {shops["athens"][key].area}
-                </p>
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <h4>Θεσσσαλονίκη</h4>
-            {Object.keys(shops["thessaloniki"]).map((key) => (
-              <a href={shops["thessaloniki"][key].website}>
-                <p>
-                  {shops["thessaloniki"][key].name},{" "}
-                  {shops["thessaloniki"][key].area}
-                </p>
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <h4>Εκτός Ελλάδας</h4>
-          </div>
-        </div>
+        {Object.keys(shops).map((placeKey) => {
+          const place = shops[placeKey];
+          return (
+            <div className="row" key={placeKey}>
+              <div className="col">
+                <h4>{place.label}</h4>
+                {Object.keys(place.shops).map((shopKey) => {
+                  const shop = place.shops[shopKey];
+                  return (
+                    <div className="p-2">
+                      <a
+                        href={shop.website}
+                        key={shopKey}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {shop.name}, {shop.area}
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );
