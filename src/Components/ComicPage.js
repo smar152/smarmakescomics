@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Gallery from "./Gallery";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
+import { getNameForShopByKey } from "../data/shopsData";
 
 const comics = getComics();
 const keys = Object.keys(comics);
@@ -20,6 +21,24 @@ const ComicPage = (props) => {
       index === 0 ? comic.description : comic.pages[index - 1].description,
     subtitle: index === 0 ? comic.subtitle : comic.pages[index - 1].subtitle,
   }));
+
+  const StoresList = (
+    <div>
+      <h5>Θα το βρείτε στα:</h5>
+      <div>
+        {Object.keys(comic.availableStores).map((key) => {
+          const { url } = comic.availableStores[key];
+          return (
+            <p>
+              <a key={key} href={url} target="_blank" rel="noopener noreferrer">
+                {getNameForShopByKey(key)}
+              </a>
+            </p>
+          );
+        })}
+      </div>
+    </div>
+  );
 
   useEffect(
     (e) => {
@@ -71,7 +90,7 @@ const ComicPage = (props) => {
               <h1 id="pageTitle">{comic.title}</h1>
             </div>
           </div>
-          <Gallery images={images} hasCover={true} />
+          <Gallery images={images} hasCover={true} stores={StoresList} />
         </div>
         <div className="col d-flex align-items-center">
           <a>

@@ -74,16 +74,27 @@ const shops = {
       },
     },
   },
-  digital: {
-    label: "Ψηφιακά",
-    shops: {
-      gumroad: {
-        name: "Gumroad",
-        area: "",
-        website: "https://gumroad.com/smar/",
-      },
-    },
-  },
+};
+
+/**
+ * Object with all stores by key for convenience
+ * @type {{}}
+ */
+export const allStores = Object.keys(shops).reduce((stores, cityKey) => {
+  Object.keys(shops[cityKey].shops).forEach((key) => {
+    stores[key] = shops[cityKey].shops[key];
+  });
+  return stores;
+}, {});
+
+export const getNameForShopByKey = (key) => {
+  const storeData = allStores[key];
+  console.log(key, storeData, allStores);
+  if (storeData && storeData.name) {
+    return storeData.name;
+  } else {
+    return "Store label not found";
+  }
 };
 
 export function getShops() {

@@ -14,6 +14,7 @@ const Gallery = ({
   images = [],
   imgContainerClasses = "col",
   imgClasses = "img-fluid w-100 clickable",
+  stores = null,
 }) => {
   const [firstImage, ...restOfImages] = images;
   const [isOpen, setOpen] = React.useState(false);
@@ -74,7 +75,10 @@ const Gallery = ({
   const useStyles = makeStyles((theme) => ({
     galleryModal: {
       position: "absolute",
+      // width: 700,
+      // height: "90vh",
       backgroundColor: theme.palette.background.paper,
+      // border: "2px solid #000",
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
@@ -105,13 +109,7 @@ const Gallery = ({
           </div>
           <div className="row">
             <p id="pageDescription">{firstImage.description}</p>
-            <p>
-              {hasCover && (
-                <Link to="/shops/">
-                  <div>Πού θα βρείτε τεύχη</div>
-                </Link>
-              )}
-            </p>
+            {stores}
           </div>
         </div>
       )}
@@ -120,7 +118,7 @@ const Gallery = ({
         <div className="row">
           {imagesBelow.map(({ src }, index) => {
             return (
-              <div className={imgContainerClasses}>
+              <div className={imgContainerClasses} key={index}>
                 <img
                   onClick={() => {
                     const actualIndex = hasCover ? index + 1 : index;
