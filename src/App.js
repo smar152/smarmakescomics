@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import IllustrationGallery from "./Components/IllustrationGallery.js";
 import ComicsGallery from "./Components/ComicsGallery.js";
 import Home from "./Components/Home";
@@ -55,35 +55,24 @@ const routes = [
   },
 ];
 
-const RouteWrapper = ({ component: Component, layout: Layout, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) => (
-        <Layout {...props}>
-          <Component {...props} />
-        </Layout>
-      )}
-    />
-  );
-};
-
 const App = (props) => {
   return (
     <>
       <Router>
         <Header />
-        <Switch>
-          {routes.map(({ component, path, layout }) => (
-            <RouteWrapper
-              exact
-              component={component}
+        <Routes>
+          {routes.map(({ component: Component, path, layout: Layout }) => (
+            <Route
               path={path}
-              layout={layout}
               key={path}
+              element={
+                <Layout>
+                  <Component />
+                </Layout>
+              }
             />
           ))}
-        </Switch>
+        </Routes>
         <Footer />
       </Router>
     </>
