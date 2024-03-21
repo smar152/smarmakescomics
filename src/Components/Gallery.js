@@ -44,7 +44,6 @@ const Gallery = ({
 
   const handleOpen = (actualIndex) => {
     setOpen(true);
-    console.log("currentIndex should be: ", actualIndex);
     setCurrentIndex(actualIndex);
   };
 

@@ -89,7 +89,6 @@ export const allStores = Object.keys(shops).reduce((stores, cityKey) => {
 
 export const getNameForShopByKey = (key) => {
   const storeData = allStores[key];
-  console.log(key, storeData, allStores);
   if (storeData && storeData.name) {
     return storeData.name;
   } else {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as serviceWorker from "../serviceWorker";
 import { getShops } from "../data/shopsData.js";
 
