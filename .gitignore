@@ -1,5 +1,5 @@
-#Irrelevant
-Ignore/
+# intelliJ
+.idea
 
 # Build Directory
 build/
