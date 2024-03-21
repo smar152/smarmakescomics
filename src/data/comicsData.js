@@ -2,7 +2,7 @@ import React from "react";
 
 const comics = {
   tipota: {
-    coverSrc: "/img/comicCovers/TipotaCover.jpg",
+    coverSrc: "/img/comicCovers/TipotaCover.png",
     title: "Μάλλον Δεν Εϊναι Τίποτα",
     subtitle: "40 σελίδες | αυτοβιογραφικό | 2021",
     year: "2021",
