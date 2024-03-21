@@ -1,5 +1,11 @@
+#Irrelevant
+Ignore/
+
 # intelliJ
 .idea
+
+#vsCode
+.history
 
 # Build Directory
 build/
