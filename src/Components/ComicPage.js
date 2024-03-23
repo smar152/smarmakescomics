@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as serviceWorker from "../serviceWorker";
 import { getComics } from "../data/comicsData";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Gallery from "./Gallery";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
@@ -11,7 +11,8 @@ const comics = getComics();
 const keys = Object.keys(comics);
 
 const ComicPage = (props) => {
-  const { onoma } = props.match.params;
+  const { onoma } = useParams();
+
   const [key, setKey] = useState(onoma);
   const comic = comics[key];
 
