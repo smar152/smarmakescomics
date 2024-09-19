@@ -1,6 +1,25 @@
 import React from "react";
 
 const comics = {
+  anapantites: {
+    coverSrc: "/img/comicCovers/AnapantitesCover.jpg",
+    title: "Αναπάντητες",
+    subtitle: "22 σελίδες | ιστορία | 2024",
+    year: "2024",
+    description:
+      "Μία Καθαρά Δευτέρα στην Πνύκα, μία παρέα συζητάει σχεσιακά δράματα ενώ γύρω τους πετάνε χαρταετοί.",
+    pages: [
+      "/img/comicPages/Anapantites_1.jpg",
+      "/img/comicPages/Anapantites_2.jpg",
+      "/img/comicPages/Anapantites_3.jpg",
+    ],
+    availableStores: {
+      solaris: {
+        url: "https://solaris.gr/shop/comics/in-greek/%ce%b1%ce%bd%ce%b1%cf%80%ce%b1%ce%bd%cf%84%ce%b7%cf%84%ce%b5%cf%83/",
+      },
+      jemma: {}
+    },
+  },
   tipota: {
     coverSrc: "/img/comicCovers/TipotaCover.png",
     title: "Μάλλον Δεν Εϊναι Τίποτα",
@@ -17,6 +36,7 @@ const comics = {
       solaris: {
         url: "https://solaris.gr/shop/comics/in-greek/%ce%bc%ce%b1%ce%bb%ce%bb%ce%bf%ce%bd-%ce%b4%ce%b5%ce%bd-%ce%b5%ce%b9%ce%bd%ce%b1%ce%b9-%cf%84%ce%b9%cf%80%ce%bf%cf%84%ce%b1-%ce%b5%ce%bd%ce%b1-%ce%ba%ce%bf%ce%bc%ce%b9%ce%be%ce%bf%ce%b7%ce%bc%ce%b5/",
       },
+      jemma: {}
     },
   },
   myalo: {
@@ -70,6 +90,7 @@ const comics = {
       akyvernites: {
         url: "https://akybernitespoliteies.org/book/%CF%84%CE%B1-%CE%BA%CF%81%CE%BF%CF%85%CE%B1%CF%83%CE%B1%CE%BD%CE%B1%CE%BA%CE%B9%CE%B1-%CE%B4%CE%B5%CE%BD-%CE%B5%CE%B9%CE%BD%CE%B1%CE%B9-%CF%84%CE%B1-%CE%B9%CE%B4%CE%B9%CE%B1",
       },
+      jemma: {}
     },
   },
   malakaLesvies4: {
@@ -93,6 +114,7 @@ const comics = {
       akyvernites: {
         url: "https://akybernitespoliteies.org/book/%CE%BC%CE%B1%CE%BB%CE%B1%CE%BA%CE%B1-%CE%BB%CE%B5%CF%83%CE%B2%CE%B9%CE%B5%CF%83-4",
       },
+      jemma: {}
     },
   },
   antio: {
@@ -113,6 +135,7 @@ const comics = {
       akyvernites: {
         url: "https://akybernitespoliteies.org/book/%CF%80%CE%B5%CF%83-%CE%B1%CE%BD%CF%84%CE%B9%CE%BF",
       },
+      jemma: {},
     },
   },
   malakaLesvies3: {
@@ -136,6 +159,7 @@ const comics = {
       akyvernites: {
         url: "https://akybernitespoliteies.org/book/%CE%BC%CE%B1%CE%BB%CE%B1%CE%BA%CE%B1-%CE%BB%CE%B5%CF%83%CE%B2%CE%B9%CE%B5%CF%83-3",
       },
+      jemma: {},
     },
   },
   malakaLesvies2: {
@@ -178,6 +202,9 @@ const comics = {
     availableStores: {
       solaris: {
         url: "https://solaris.gr/product/%ce%bc%ce%b1%ce%bb%ce%b1%ce%ba%ce%b1-%ce%bb%ce%b5%cf%83%ce%b2%ce%b9%ce%b5%cf%83/",
+      },
+      jemma: {
+        url: "https://jemmacomics.com/product/%ce%bc%ce%b1%ce%bb%ce%ac%ce%ba%ce%b1-%ce%bb%ce%b5%cf%83%ce%b2%ce%af%ce%b5%cf%82-1-omg-lesbians-1/",
       },
       comicStrip: {
         url: "https://comicstrip.gr/el-gr/comics/ellhnika/malaka-lesbies!",
