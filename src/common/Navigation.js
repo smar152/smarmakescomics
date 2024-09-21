@@ -32,7 +32,7 @@ function Navigation() {
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="navigation col-md-8 col-lg-6 d-none d-md-flex flex-row align-items-center justify-content-between">
+      <div className="navigation col-md-8 col-lg-7 d-none d-md-flex gap-3 flex-row align-items-center justify-content-between">
         <MenuLinks />
       </div>
 

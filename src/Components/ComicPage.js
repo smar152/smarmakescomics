@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as serviceWorker from "../serviceWorker";
 import { getComics } from "../data/comicsData";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Gallery from "./Gallery";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
@@ -14,6 +14,9 @@ const ComicPage = (props) => {
   const { onoma } = useParams();
 
   const [key, setKey] = useState(onoma);
+  const navigate = useNavigate();
+
+
   const comic = comics[key];
 
   const images = [comic.coverSrc, ...Object(comic.pages)].map((src, index) => ({
@@ -56,7 +59,7 @@ const ComicPage = (props) => {
       previousIndex = keys.length - 1;
     }
     // setKey(keys[previousIndex]);
-    props.history.push(`/comics/${keys[previousIndex]}`);
+    navigate(`/comics/${keys[previousIndex]}`);
   };
   const onNextComic = () => {
     const currentIndex = keys.indexOf(key);
@@ -65,7 +68,7 @@ const ComicPage = (props) => {
     if (nextIndex >= keys.length) {
       nextIndex = 0;
     }
-    props.history.push(`/comics/${keys[nextIndex]}`);
+    navigate(`/comics/${keys[nextIndex]}`);
     // setKey(keys[nextIndex]);
   };
 

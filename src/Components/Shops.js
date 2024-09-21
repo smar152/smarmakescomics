@@ -23,7 +23,7 @@ const Shops = (props) => {
                 {Object.keys(place.shops).map((shopKey) => {
                   const shop = place.shops[shopKey];
                   return (
-                    <div className="p-2">
+                    <div className="pb-1">
                       <a
                         href={shop.website}
                         key={shopKey}

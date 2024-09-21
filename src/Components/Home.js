@@ -3,6 +3,7 @@ import PaintingPaths from "./svg/PaintingPaths";
 import BookPaths from "./svg/BookPaths";
 import SmarPaths from "./svg/SmarPaths";
 import "animate.css/animate.min.css";
+import { useNavigate } from "react-router-dom";
 
 function Home(props) {
   const [paintingClass, setPaintingClass] = useState("");
@@ -10,10 +11,11 @@ function Home(props) {
   const [smarClass, setSmarClass] = useState("");
   const [changeLocation, setChangeLocation] = useState(""); // what should the final location after a click be - nothing for hover
   const [animationRunning, setAnimationRunning] = useState(false);
+  const navigate = useNavigate();
 
   const onAnimationEnd = (e) => {
     if (changeLocation) {
-      props.history.push(changeLocation);
+      navigate(changeLocation);
     }
     setAnimationRunning(false);
   };

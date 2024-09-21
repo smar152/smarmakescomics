@@ -89,7 +89,7 @@ const Gallery = ({
     <div className="row">
       {/* cover */}
       {hasCover && (
-        <div className="col-12 col-md-5">
+        <div className="col-12 col-md-5 pb-4">
           <img
             onClick={() => {
               const actualIndex = 0;
