@@ -16,7 +16,6 @@ const ComicPage = (props) => {
   const [key, setKey] = useState(onoma);
   const navigate = useNavigate();
 
-
   const comic = comics[key];
 
   const images = [comic.coverSrc, ...Object(comic.pages)].map((src, index) => ({
@@ -83,7 +82,7 @@ const ComicPage = (props) => {
             />
           </a>
         </div>
-        <div className="col-10">
+        <div className="col-7 col-md-10">
           <div className="row">
             <div className="col">
               <Link to="/comics">Κόμικς</Link>

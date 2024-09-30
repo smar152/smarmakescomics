@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Masonry from "react-masonry-component";
 
 const comics = getComics();
-const margin = 20;
+const margin = 5;
 
 const masonryOptions = {
   transitionDuration: 0,

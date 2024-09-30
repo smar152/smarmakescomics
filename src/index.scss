@@ -27,6 +27,14 @@ body {
       monospace;
   }
 
+  @media screen and (max-width: 560px) {
+    h1 {
+      font-size: 1.9rem;
+      line-height: 80%;
+      margin-top: 20px;
+    }
+  }
+
   h3 {
     color: $orange;
     font-weight: 800;
