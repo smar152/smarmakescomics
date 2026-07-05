@@ -9,6 +9,7 @@ import AboutPage from "./Components/AboutPage.js";
 import ComicPage from "./Components/ComicPage.js";
 import Shops from "./Components/Shops.js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Kafes from "./Components/Kafes.js";
 
 const MinHeightLayout = ({ children }) => (
   <div className="content minHeightLayout">
@@ -51,6 +52,11 @@ const routes = [
   {
     component: Shops,
     path: "/shops",
+    layout: MinHeightLayout,
+  },
+  {
+    component: Kafes,
+    path: "/kafes",
     layout: MinHeightLayout,
   },
 ];
